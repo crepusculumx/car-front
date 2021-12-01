@@ -27,18 +27,11 @@ import { LayoutBlankComponent } from './blank/blank.component';
 
 const COMPONENTS = [LayoutBasicComponent, LayoutBlankComponent];
 
-const HEADERCOMPONENTS = [
-  HeaderSearchComponent,
-  HeaderFullScreenComponent,
-  HeaderClearStorageComponent,
-  HeaderUserComponent,
-];
+const HEADERCOMPONENTS = [HeaderSearchComponent, HeaderFullScreenComponent, HeaderClearStorageComponent, HeaderUserComponent];
 
 // passport
 import { LayoutPassportComponent } from './passport/passport.component';
-const PASSPORT = [
-  LayoutPassportComponent
-];
+const PASSPORT = [LayoutPassportComponent];
 
 @NgModule({
   imports: [
@@ -58,9 +51,9 @@ const PASSPORT = [
     NzSpinModule,
     NzBadgeModule,
     NzAvatarModule,
-    NzIconModule,
+    NzIconModule
   ],
   declarations: [...COMPONENTS, ...HEADERCOMPONENTS, ...PASSPORT],
-  exports: [...COMPONENTS, ...PASSPORT],
+  exports: [...COMPONENTS, ...PASSPORT]
 })
-export class LayoutModule { }
+export class LayoutModule {}

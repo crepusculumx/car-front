@@ -1,0 +1,30 @@
+<page-header [autoBreadcrumb]="false" [content]="content">
+  <ng-template #content> </ng-template>
+</page-header>
+
+<nz-row [nzGutter]="16">
+  <nz-col [nzSpan]="12">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(11.28 | number: '1.0-2')!"
+        [nzTitle]="'机器人运动速度'"
+        [nzPrefix]="prefixTplOne"
+        [nzSuffix]="'米/秒'"
+        [nzValueStyle]="{ color: '#3F8600' }"
+      ></nz-statistic>
+      <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+    </nz-card>
+  </nz-col>
+  <nz-col [nzSpan]="12">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="'出错'"
+        [nzTitle]="'机器人状态'"
+        [nzPrefix]="prefixTplTwo"
+        [nzSuffix]="''"
+        [nzValueStyle]="{ color: '#CF1322' }"
+      ></nz-statistic>
+      <ng-template #prefixTplTwo></ng-template>
+    </nz-card>
+  </nz-col>
+</nz-row>

@@ -24,12 +24,8 @@
             <input nz-input formControlName="mobile" placeholder="mobile number" />
           </nz-input-group>
           <ng-template #mobileErrorTip let-i>
-            <ng-container *ngIf="i.errors.required">
-              请输入手机号！
-            </ng-container>
-            <ng-container *ngIf="i.errors.pattern">
-              手机号格式错误！
-            </ng-container>
+            <ng-container *ngIf="i.errors.required"> 请输入手机号！ </ng-container>
+            <ng-container *ngIf="i.errors.pattern"> 手机号格式错误！ </ng-container>
           </ng-template>
         </nz-form-control>
       </nz-form-item>
@@ -43,7 +39,7 @@
             </nz-col>
             <nz-col [nzSpan]="8">
               <button type="button" nz-button nzSize="large" (click)="getCaptcha()" [disabled]="count >= 0" nzBlock [nzLoading]="loading">
-                {{ count ? count + 's' : ('获取验证码') }}
+                {{ count ? count + 's' : '获取验证码' }}
               </button>
             </nz-col>
           </nz-row>
@@ -60,9 +56,7 @@
     </nz-col>
   </nz-form-item>
   <nz-form-item>
-    <button nz-button type="submit" nzType="primary" nzSize="large" [nzLoading]="loading" nzBlock>
-      登录
-    </button>
+    <button nz-button type="submit" nzType="primary" nzSize="large" [nzLoading]="loading" nzBlock> 登录 </button>
   </nz-form-item>
 </form>
 <div class="other">

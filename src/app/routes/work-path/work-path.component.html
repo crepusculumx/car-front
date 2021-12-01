@@ -1,0 +1,21 @@
+<page-header [autoBreadcrumb]="false" [content]="content">
+  <ng-template #content>
+    <nz-steps nzType="navigation" [nzCurrent]="stepIndex" (nzIndexChange)="onIndexChange($event)">
+      <nz-step nzTitle="选择起点"></nz-step>
+      <nz-step nzTitle="选择车道线"></nz-step>
+      <nz-step nzTitle="选择水线"></nz-step>
+      <nz-step nzTitle="确认开始工作"></nz-step>
+    </nz-steps>
+  </ng-template>
+</page-header>
+
+<div id="map" style="position: relative; height: 75vh"></div>
+
+<ng-template #notificationTpl let-info="data">
+  <nz-card nzTitle="水线信息">
+    <p *ngFor="let str of info">
+      {{ str }}
+    </p>
+  </nz-card>
+  <button nz-button nzType="primary" (click)="startWork()">确认开始施工</button>
+</ng-template>
