@@ -7,7 +7,7 @@ import { environment } from '@env/environment';
   selector: 'layout-basic',
   template: `
     <layout-default [options]="options" [asideUser]="asideUserTpl" [content]="contentTpl" [customError]="null">
-      <layout-default-header-item direction="left">
+      <!-- <layout-default-header-item direction="left">
         <a layout-default-header-item-trigger href="//github.com/ng-alain/ng-alain" target="_blank">
           <i nz-icon nzType="github"></i>
         </a>
@@ -24,8 +24,8 @@ import { environment } from '@env/environment';
       </layout-default-header-item>
       <layout-default-header-item direction="middle">
         <header-search class="alain-default__search" [toggleChange]="searchToggleStatus"></header-search>
-      </layout-default-header-item>
-      <layout-default-header-item direction="right" hidden="mobile">
+      </layout-default-header-item> -->
+      <!-- <layout-default-header-item direction="right" hidden="mobile">
         <div layout-default-header-item-trigger nz-dropdown [nzDropdownMenu]="settingsMenu" nzTrigger="click" nzPlacement="bottomRight">
           <i nz-icon nzType="setting"></i>
         </div>
@@ -39,10 +39,10 @@ import { environment } from '@env/environment';
             </div>
           </div>
         </nz-dropdown-menu>
-      </layout-default-header-item>
-      <layout-default-header-item direction="right">
+      </layout-default-header-item> -->
+      <!-- <layout-default-header-item direction="right">
         <header-user></header-user>
-      </layout-default-header-item>
+      </layout-default-header-item> -->
       <ng-template #asideUserTpl>
         <div nz-dropdown nzTrigger="click" [nzDropdownMenu]="userMenu" class="alain-default__aside-user">
           <nz-avatar class="alain-default__aside-user-avatar" [nzSrc]="user.avatar"></nz-avatar>

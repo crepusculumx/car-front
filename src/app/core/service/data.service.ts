@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 export class DataService {
   constructor(private httpClient: HttpClient) {}
 
-  getFeatures(): Observable<any> {
-    return this.httpClient.get(`features`);
+  getPreviewFeaturess(): Observable<any> {
+    return this.httpClient.get(`paths/beijing/center-features`);
   }
 
-  getData(id: number): Observable<any> {
-    return this.httpClient.get(`data${id}`);
+  getLaneLineFeatures(): Observable<any> {
+    return this.httpClient.get(`paths/beijing/lane-line-features`);
   }
 }

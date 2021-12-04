@@ -6,7 +6,7 @@
   <nz-col [nzSpan]="12">
     <nz-card>
       <nz-statistic
-        [nzValue]="(11.28 | number: '1.0-2')!"
+        [nzValue]="(0 | number: '1.0-2')!"
         [nzTitle]="'机器人运动速度'"
         [nzPrefix]="prefixTplOne"
         [nzSuffix]="'米/秒'"
@@ -18,13 +18,17 @@
   <nz-col [nzSpan]="12">
     <nz-card>
       <nz-statistic
-        [nzValue]="'出错'"
+        [nzValue]="'空闲'"
         [nzTitle]="'机器人状态'"
         [nzPrefix]="prefixTplTwo"
         [nzSuffix]="''"
-        [nzValueStyle]="{ color: '#CF1322' }"
+        [nzValueStyle]="{ color: '#3F8600' }"
       ></nz-statistic>
       <ng-template #prefixTplTwo></ng-template>
     </nz-card>
   </nz-col>
 </nz-row>
+
+<button nz-button nzType="default">开始工作</button>
+<button nz-button nzType="default">暂停工作</button>
+<button nz-button nzType="default">停止工作</button>

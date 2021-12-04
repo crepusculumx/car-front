@@ -21,9 +21,6 @@ export class WorkPathComponent implements AfterViewInit {
 
   previewLineLayer$: AsyncSubject<ILayer> = new AsyncSubject<ILayer>();
   specificLineLayer$: AsyncSubject<ILayer> = new AsyncSubject<ILayer>();
-
-  rotation = 0;
-
   switchToPreview() {
     forkJoin([this.scene$, this.previewLineLayer$])
       .pipe(
@@ -47,8 +44,6 @@ export class WorkPathComponent implements AfterViewInit {
       //y(0 ,1)
       let phi = Math.acos((x * 0 + y * 1) / Math.sqrt(x * x + y * y));
       phi = (phi / 3.14159) * 180;
-      console.log(phi);
-      console.log(x, y);
       if (x >= 0 && y >= 0) {
         return 360 - phi;
       } else if (x <= 0 && y >= 0) {
@@ -97,7 +92,7 @@ export class WorkPathComponent implements AfterViewInit {
         })
       )
       .subscribe(args => {
-        this.rotation = args.scene.getRotation();
+        let rotation = args.scene.getRotation();
         args.scene.setZoom(15);
         let specificCoordinates;
 
@@ -113,7 +108,7 @@ export class WorkPathComponent implements AfterViewInit {
           args.scene.setCenter(specificCoordinates[specificCoordinates.length - 1]);
         }
 
-        args.scene.setRotation(this.rotation);
+        args.scene.setRotation(rotation);
       });
   }
 
@@ -230,11 +225,11 @@ export class WorkPathComponent implements AfterViewInit {
   startWork() {}
 
   httpInit() {
-    this.dataService.getData(1).subscribe((features: any) => {
+    this.dataService.getPreviewFeaturess().subscribe((features: any) => {
       this.previewFeatures$.next(features);
       this.previewFeatures$.complete();
     });
-    this.dataService.getFeatures().subscribe((features: any) => {
+    this.dataService.getLaneLineFeatures().subscribe((features: any) => {
       this.specificFeatures$.next(features);
       this.specificFeatures$.complete();
     });
