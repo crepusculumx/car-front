@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, Optional } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, Optional } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StartupService } from '@core';
@@ -16,7 +16,7 @@ import { finalize } from 'rxjs/operators';
   providers: [SocialService],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserLoginComponent implements OnDestroy {
+export class UserLoginComponent implements OnInit, OnDestroy {
   constructor(
     fb: FormBuilder,
     private router: Router,
@@ -39,6 +39,10 @@ export class UserLoginComponent implements OnDestroy {
     });
   }
 
+  ngOnInit() {
+    this.tokenService.set({ token: 'mocktoken' });
+    this.router.navigateByUrl('');
+  }
   // #region fields
 
   get userName(): AbstractControl {
